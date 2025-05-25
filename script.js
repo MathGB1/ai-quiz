@@ -151,7 +151,7 @@ Apenas o array JSON. Verifique se todas as strings dentro do JSON estão correta
                 errorMessage.textContent = "Quiz de teste não disponível no momento.";
                 return;
             }
-            startQuiz("Quiz Rápido de Teste");
+            startQuiz("Quiz Teste");
             return;
         }
 
@@ -161,7 +161,7 @@ Apenas o array JSON. Verifique se todas as strings dentro do JSON estão correta
             return;
         }
         if (!theme) {
-            errorMessage.textContent = "Não esqueça de nos dizer o tema do quiz!";
+            errorMessage.textContent = "Não esqueça de dizer o tema do quiz";
             return;
         }
 
@@ -291,13 +291,13 @@ Apenas o array JSON. Verifique se todas as strings dentro do JSON estão correta
         }
         quizArea.classList.add('hidden');
         resultArea.classList.remove('hidden');
-        scoreDisplay.textContent = `Sua pontuação: ${score} de ${quizData.length}!`;
+        scoreDisplay.textContent = `Sua pontuação: ${score} de ${quizData.length}`;
     }
 
     restartQuizBtn.addEventListener('click', () => {
         resultArea.classList.add('hidden');
         setupArea.classList.remove('hidden');
-        themeInput.value = "Sistema Solar";
+        themeInput.value = "Matemática Básica";
         difficultySelect.value = "easy";
         numQuestionsSelect.value = "4";
         testQuizCheckbox.checked = false;
