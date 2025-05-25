@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crie seu Quiz!</title>
+    <title>Quiz</title>
     <style>
-        /* SEU CSS EXISTENTE AQUI ... (copie e cole o CSS da sua última versão) */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -147,16 +146,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Crie seu Quiz!</h1>
+        <h1>Quiz</h1>
 
         <div id="setupArea">
-            <h2>Monte seu Quiz</h2>
+            <h2>Configurações</h2>
             <div>
-                <label for="apiKey">Chave de API do Google Gemini (será usada no seu navegador):</label>
+                <label for="apiKey">Chave de API do Google Gemini:</label>
                 <input type="password" id="apiKey" placeholder="Sua chave aqui">
             </div>
             <div>
-                <label for="theme">Tema do Quiz:</label>
+                <label for="theme">Tema:</label>
                 <input type="text" id="theme" value="Sistema Solar">
             </div>
             <div>
@@ -168,7 +167,7 @@
                 </select>
             </div>
             <div>
-                <label for="numQuestions">Nº de Perguntas:</label>
+                <label for="numQuestions">Número de Perguntas:</label>
                 <select id="numQuestions">
                     <option value="4" selected>4</option>
                     <option value="6">6</option>
@@ -178,7 +177,7 @@
             </div>
             <div>
                 <input type="checkbox" id="testQuizCheckbox">
-                <label for="testQuizCheckbox" class="checkbox-label">Usar Quiz de Teste Rápido</label>
+                <label for="testQuizCheckbox" class="checkbox-label">Quiz de Teste</label>
             </div>
             <button id="generateQuizBtn">Criar Quiz</button>
             <div id="loadingMessage" class="hidden">Gerando quiz...</div>
@@ -186,7 +185,7 @@
         </div>
 
         <div id="quizArea" class="hidden">
-            <h2 id="quizTitle">Quiz Iniciado!</h2>
+            <h2 id="quizTitle">Quiz Iniciado</h2>
             <div id="timerDisplay">Tempo: <span>--:--</span></div>
             <hr style="border: none; border-top: 1px solid #eee; margin: 10px 0;">
             <div id="questionContainer">
