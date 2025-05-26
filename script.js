@@ -1,8 +1,4 @@
-﻿// script.js
-
-// Tenta importar a SDK do Gemini. Se falhar, pode ser um problema com o CDN ou o navegador.
-// Usaremos esm.sh que é um CDN que serve pacotes npm como módulos ES.
-import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from 'https://esm.sh/@google/generative-ai';
+﻿import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from 'https://esm.sh/@google/generative-ai';
 
 document.addEventListener('DOMContentLoaded', () => {
     const setupArea = document.getElementById('setupArea');
@@ -52,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             genAI = new GoogleGenerativeAI(apiKey);
             model = genAI.getGenerativeModel({
-                model: "gemini-1.5-flash-latest", // ou gemini-pro
+                model: "gemini-1.5-flash-latest", // modelo escolhido
                 systemInstruction: `Você é um assistente especializado em criar quizzes. Seu objetivo é gerar quizzes com base nos temas, níveis de dificuldade e número de questões fornecidos.
 A resposta DEVE ser um array JSON válido. Cada objeto no array representa uma questão e precisa seguir esta estrutura:
 {
@@ -122,13 +118,12 @@ Apenas o array JSON. Verifique se todas as strings dentro do JSON estão correta
             if (!Array.isArray(parsedQuizData) || parsedQuizData.length === 0) {
                 throw new Error("A IA retornou dados em formato inesperado. Tente novamente.");
             }
-            // Validações adicionais da estrutura do quizData podem ser adicionadas aqui se necessário
 
             return parsedQuizData;
 
         } catch (apiError) {
             console.error('Erro na chamada da API Gemini ou processamento:', apiError);
-            throw apiError; // Re-throw para ser pego pelo chamador
+            throw apiError;
         }
     }
 
@@ -155,7 +150,6 @@ Apenas o array JSON. Verifique se todas as strings dentro do JSON estão correta
             return;
         }
 
-        // Validação da API Key e tema movida para antes da chamada da API
         if (!apiKey) {
             errorMessage.textContent = "Por favor, insira sua Chave de API.";
             return;
